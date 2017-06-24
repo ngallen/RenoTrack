@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="row">
+        <div class="col-xs-12 text-center title1">
+            <h1>Edit Renovation Item</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-10 col-md-offset-1 padding-top renoForm">
+            <form action="#" method = "post">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type ="text" maxlength="50" class="form-control" name="name" value="{{item.name}}">
+
+                    <label for="description">Description:</label>
+                    <textarea class="form-control" maxlength="250" rows="3" name="description">{{item.description}}</textarea>
+
+                    <label for="cost">Cost:</label>
+                    <div class="input-group">
+                        <div class="input-group-addon">$</div>
+                        <input type ="text" class="form-control" maxlength="100" name="cost" value="{{item.cost}}">
+                    </div>
+                    <label for="areas">Areas:</label>
+                    <div class="input-group">
+                        <select name="area_id">
+                        {% for area in areas %}
+                            <option value="{{area.id}}">{{area.name}}</option>
+                        {%endfor %}
+                        </select>
+                    </div>
+                    <br/>
+                    <br/>
+                    <button type="submit" class="btn btn-default" id="submit" type="submit">
+                    <span class="glyphicon glyphicon-glass" aria-hidden="true"></span>Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}

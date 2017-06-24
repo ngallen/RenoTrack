@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% if user_id %}
+	<div class='row'>
+		<div class="col-xs-12">
+			<a href="{{url_for('newRenoItem')}}" class="newReno">+ Add New Item</a>
+		</div>
+	</div>
+{% endif %}
+{% for item in items %}
+{% for area in areas %}
+{% if item.area_id == area.id %}
+<div class="row">
+	<div class="col-xs-12">
+		<div class="col-xs-9 renoSum"><a href='/renoTrack/renoItem/{{item.id}}'>{{item.name}} | {{item.cost}} | {{area.name}}</a></div>
+
+		{% if item.user_id == user_id %}
+		<div class='col-xs-1'></div>
+		<div class="col-xs-1">
+			<a href="/renoTrack/renoItem/{{item.id}}/edit" class="button1">Edit</a>
+		</div>
+		<div class="col-xs-1">
+			<a href="/renoTrack/renoItem/{{item.id}}/delete" class="button1">Delete</a>
+		</div>
+		{% endif %}
+	</div>
+</div>
+{% endif %}
+{% endfor %}
+{% endfor %}
+{% endblock %}

@@ -1,0 +1,150 @@
+div {
+/*  border: 1px solid red;*/
+}
+
+html, body {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    height: 100%
+}
+
+.b-head {
+    background-color: #33253A;
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+
+.b-body {
+    background-color: #EBEEF2;
+    height: 100%
+}
+
+.c-body{
+    background-color: #FFFFFF;
+}
+.container  {
+    width: 1000px;
+}
+
+.navCol{
+    background-color: #4A2B59;
+    color: #33383E;
+    text-align: right;
+}
+
+/*.nav-tabs>li>a:hover, .nav>li>a:focus, .nav>li>a:hover {
+    border-color: transparent;
+    background-color: #435D74;
+    color: #C7CED5;
+}*/
+
+.renoSum {
+    font-size: 20px;
+}
+
+.newReno {
+    font-size: 20px;
+    margin-bottom: 1%;
+    color: gray;
+}
+
+.areaNavs {
+    font-size: 20px;
+    line-height: 30px;
+    text-decoration: none;
+    font-weight: 200;
+    color: #C7CEC2;
+    justify-content: right;
+}
+a:hover.areaNavs,
+li:hover.areaNavs {
+    color: #FFFFFF;
+    text-decoration: none;
+    background-color: #7D4996;
+}
+
+.active {
+    background-color: #7D4996;
+}
+
+.main-title {
+    font-size: 40px;
+    line-height: 80px;
+    text-decoration: none;
+    font-weight: 300;
+    color: #FFFFFF;
+}
+a:hover.main-title{
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.error {
+    color: red;
+    margin-top: 2%;
+}
+
+input[type=text], input[type=password]{
+    width: 100%;
+    font-size: 24px;
+    padding: 2px;
+    font-family: monospace;
+}
+
+a {
+    color: black;
+}
+
+textarea {
+width: 100%;
+height: 400px;
+font-size: 17px;
+font-family: monospace;
+}
+
+input[type=submit] {
+font-size: 24px;
+margin-top: 10%;
+}
+
+.loginButton {
+    color: white;
+    font-size: 20px;
+}
+
+.flash {
+    background-color: #98FB98;
+    width:100%;
+    text-decoration: none;
+    padding: 0;
+    margin: 0;
+}
+
+.flash li {
+    list-style-type: none;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+
+.button1 {
+    color: gray;
+    font-size: 12px;
+}
+
+.padding-top {
+    paddign-top: 2%;
+}
+
+.title1 {
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.renoForm{
+    font-size: 20px;
+}
+
+.renoTitle{
+    font-size: 26px;
+}

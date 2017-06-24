@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row">
+	<div class="col-xs-9 renoTitle text-center">{{item.name}}</div>
+
+	{% if item.user_id == user_id %}
+	<div class='col-xs-1'></div>
+	<div class="col-xs-1">
+		<a href="/renoTrack/renoItem/{{item.id}}/edit" class="button1">Edit</a>
+	</div>
+	<div class="col-xs-1">
+		<a href="/renoTrack/renoItem/{{item.id}}/delete" class="button1">Delete</a>
+	</div>
+	{% endif %}
+</div>
+<div class="row">
+	<div class="col-xs-4 renoSum text-right">Cost: </div>
+	<div class="col-xs-5 renoSum">{{item.cost}}</div>
+</div>
+<div class="row">
+	<div class="col-xs-4 renoSum text-right">Area: </div>
+	<div class="col-xs-5 renoSum">{{liveArea.name}}</div>
+</div>
+<div class="row">
+	<div class="col-xs-4 renoSum text-right">Description: </div>
+	<div class="col-xs-5 renoSum">{{item.description}}</div>
+</div>
+
+<br />
+<br />
+
+<div class="row">
+    <div class="col-xs-10 col-md-offset-1 padding-top renoForm">
+        <form action="#" method = "post">
+        <button type="submit" class="btn btn-default" id="submit" type="submit">
+                    <span class="glyphicon glyphicon-glass" aria-hidden="true"></span>Delete</button>
+        </form>
+    </div>
+</div>
+
+</div>
+{% endblock %}

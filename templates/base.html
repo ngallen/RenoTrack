@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+<!--    <link type="text/css" rel="stylesheet" href="/css/main.css" />
+ -->    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='main.css') }}">
+</head>
+
+    <title>RenoTrack</title>
+</head>
+
+<body>
+    <div class="b-head">
+        <div class="container c-head">
+            <div class="row">
+                <div class="col-xs-6 main-title">
+                    <a class="main-title" href="/renoTrack">Renovation Tracker</a>
+                </div>
+                <div class="col-md-6 text-right">
+                    {%if 'username' not in session %}
+                        <a class="loginButton" href="{{url_for('showLogin')}}">Login</a>
+                    {% else %}
+                        <a class="loginButton" href="{{url_for('disconnect')}}">Logout </a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class = 'flash alert alert-warning'>
+        {% with messages = get_flashed_messages() %}
+          {% if messages %}
+            <ul>
+            {% for message in messages %}
+                <li> <strong> {{ message }} </strong> </li>
+            {% endfor %}
+            </ul>
+            {% endif %}
+        {% endwith %}
+    </div>
+
+    <div class="b-body">
+        <div class="container c-body">
+            <div class="row">
+                <div class="col-xs-3 navCol">
+                    <ul id="tabs" class="nav nav-tabs customNav" role="tablist">
+                    {% for i in range(0, areaLength) %}
+                        <div col-xs-12>
+                            <li class="areaNavs {{''.join(activeNav[i])}}"><a class="areaNavs" href="/renoTrack/area/{{areas[i].id}}">{{areas[i].name}} ({{numRenoItems[i]}})</a></li>
+                        </div>
+                    {% endfor %}
+                    </ul>
+                </div>
+                <div class="col-xs-9 contentCol">
+                    {% block content %}
+                    {% endblock %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>
+
